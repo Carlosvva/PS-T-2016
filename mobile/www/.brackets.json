@@ -1,0 +1,8 @@
+{
+    "jscodehints.detectedExclusions": [
+        "/var/www/html/sales/components/monaca-cordova-loader/cordova-loader.js",
+        "/var/www/html/sales/components/monaca-core-utils/monaca-core-utils.js",
+        "/var/www/html/sales/js/index.js",
+        "/var/www/html/sales/components/loader.js"
+    ]
+}

@@ -1,0 +1,22 @@
+<ons-page>
+	<div class="menu fondo2">
+		<div class="cover"></div>
+		<div class="container">
+			<ons-row class="fondo1">
+				<ons-col align="center">
+					<img src="https://www.pentcloud.com/es/img/logo.svg" class="logo2"/>
+				</ons-col>
+			</ons-row>
+		</div>
+		<div class="container">
+			<ons-row>
+				<ons-col>
+					<ons-list>
+						<ons-list-item tappable ng-repeat="item in app.menu" ng-click="app.goToPage(item.location)">{{item.title}}</ons-list-item>
+						<ons-list-item tappable ng-click="app.logout()">Cerrar Sesión</ons-list-item>
+					</ons-list>
+				</ons-col>
+			</ons-row>
+		</div>
+	</div>
+</ons-page>

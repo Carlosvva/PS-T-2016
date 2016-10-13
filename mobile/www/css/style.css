@@ -1,0 +1,226 @@
+/**/
+
+.tipo {
+    font-family: "Material Icons";
+}
+.tab-bar__label {
+    text-transform: capitalize !important;
+}
+.login {
+    background: url(../img/bg.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+.login .cover{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+}
+.login .container{
+    position: relative;
+    z-index: 99;
+    width: 50%;
+    left: 25%;
+    height: 50%;
+    top: 25%;
+}
+
+.login .container .loginButton{
+    width: 100%;
+    background: #e81f63;
+}
+.login .container .font-awesome{
+    width: 100%;
+}
+.login .container .logo{
+    width: 100%;
+    height: auto;
+    color: #ffffff !important;
+    text-align: center;
+}
+.menu .container .logo2{
+    width: 100%;
+    height: auto;
+    color: #ffffff !important;
+    position: relative;
+    z-index: 99;
+    width: 50%;
+    left: 25%;
+    height: 50%;
+    top: 25%;
+}
+.fondo1{
+    background: url(../img/bg.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 150px;
+    width: 100%;
+}
+.font-awesome label span{
+    font-family: FontAwesome, 'Roboto', 'Noto', sans-serif;
+} 
+.size{
+    font-size: 100px;
+    position: relative;
+    z-index: 99;
+    width: 50%;
+    left: 25%;
+    height: 50%;
+    top: 25%;
+}
+.titulo{
+    margin-top: 10%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: #909090;
+    margin-left: 15px; 
+    font-size: 20px;
+    margin-right: 15px; 
+    text-align: center;
+}
+
+.fondo2{
+    background: white;
+    min-height: 100%;
+}
+.soporte .container{
+    size: 20%;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.contenido{
+    padding-top: 150px;
+}
+
+.sizeIcon{
+    color: #909090;
+    font-size: 80px;
+}
+
+.colorTxtIcon{
+    color: #909090;
+}
+
+.fondoComp{
+    background: url(../img/bg.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 200px;
+    width: 100%;
+}
+
+.logoComp{
+    width: auto;
+    height: auto;
+    color: #ffffff !important;
+    position: relative;
+    z-index: 99;
+    width: 60%;
+    left: 1%;
+    height: 50%;
+}
+
+.txtSupport{
+    text-align: center; 
+    margin-top: 20px;
+    padding-bottom: 120px;
+    background-color: white;
+    margin-left: 20px;
+    margin-right: 20px;
+
+}
+
+.inputSupportSize{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.inputSupportSize label span{
+    color: black;
+}
+
+.inputSupportSize label input{
+    color: black;
+    background-image: linear-gradient(to top, transparent 1px, #000000 1px);
+}
+
+.inputSupportSize label input:active{
+    color: #000000;
+    background-image: linear-gradient(to top, transparent 1px, skyblue 1px);
+}
+.coloricon{
+    color: #ffffff;
+    font-size: 20px;
+}
+.button--material--flat{
+    color: #ffffff;
+    background-color: #e81f63;
+}
+.formpro{
+    margin-top: -20px;
+    margin-bottom: 30px;
+}
+ons-dialog:not([modifier='material']) p {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+input {
+  width: 100%;
+}
+.inputAddSeller{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.inputAddSeller label span{
+    color: black;
+}
+
+.inputAddSeller label input{
+    color: black;
+    background-image: linear-gradient(to top, transparent 1px, #000000 1px);
+}
+
+.inputAddSeller label input:active{
+    color: #000000;
+    background-image: linear-gradient(to top, transparent 1px, skyblue 1px);
+}
+.dialogo {
+    background: url(../img/bg3.jpg)center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.dialogo .cover{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+}
+.dialogo .container{
+    position: relative;
+    z-index: 99;
+    width: 50%;
+    left: 25%;
+    height: 50%;
+    top: 25%;
+}
+.margin{
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+.margin2{
+    margin-bottom: 40px;
+}

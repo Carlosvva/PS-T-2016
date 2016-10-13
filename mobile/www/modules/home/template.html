@@ -1,0 +1,19 @@
+<ons-page>
+    <ons-toolbar>
+        <div class="left" ng-click="menu.toggleMenu()">
+            <ons-toolbar-button>
+                <ons-icon icon="fa-bars"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+        <div class="center">{{app.title}}</div>
+        <div class="right" ng-click="app.logout()">
+            <ons-toolbar-button>
+                <ons-icon icon="fa-sign-out"></ons-icon>
+            </ons-toolbar-button>
+        </div>
+    </ons-toolbar>
+    <div ng-click="app.goToPage('products')">HOME askdjfkjasldkjfkajsd</div>
+    <ons-fab position="bottom right" ng-click="app.goToPage('products')">
+        <ons-icon icon="md-plus"></ons-icon>
+    </ons-fab>
+</ons-page>
