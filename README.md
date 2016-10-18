@@ -1,1 +1,2 @@
-# Pentcloud-Sales
+# LEAN
+Lusca + Express + Angular + NodeJS

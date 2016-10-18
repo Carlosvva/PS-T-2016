@@ -18,20 +18,15 @@ var template = {
       model.User.findById(input.id).then(function(data){
         res.send(data);
       });
-
   },
-
   create: function(req, res) {
     // input
     var input = req.body;
       
       model.User.create(input).then(function(data){
         res.send(data);
-      });
-    
-    
+      });    
   },
-
   update: function(req, res) {
     // input
     var input = req.body;
@@ -41,7 +36,6 @@ var template = {
         res.send(data);
       });
   },
-
   delete: function(req, res) {
 
     // input
@@ -51,9 +45,7 @@ var template = {
       model.User.destroy({ where: { id: input.id } }).then(function(data){
         res.send("deleted");
       });
-
   }
 };
-
 return template;
 }

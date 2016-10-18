@@ -43,7 +43,7 @@ module.exports = function(Sequelize){
 
 	model.Quotation = sequelize.define('quotation', {
 		name: Sequelize.STRING,
-		email: Sequelize.STRING,	
+		email: Sequelize.STRING,
 		description: Sequelize.STRING
 	});
 

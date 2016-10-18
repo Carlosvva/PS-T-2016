@@ -1,13 +1,13 @@
 module.exports = function() {
-	var mysql      = require('mysql');
-	var pool  = mysql.createPool({
+	var mysql = require('mysql');
+	var pool = mysql.createPool({
 	  	connectionLimit : 10000,
 		waitForConnections:true,
 		multipleStatements:true,
-	  	host: 'localhost',
-		user: 'root',
-		password: 'pentcloud',
-		database: 'template',
+	  	host: '23.229.244.195',
+		user: 'pentcloud',
+		password: 'p3ntcl0ud@',
+		database: 'pentcloudsales',
 		port: 3306
 	});
 

@@ -27,9 +27,11 @@ module.exports = function(req, res, next) {
       req.clientTime = req.headers['x-client-time'];
       req.session = decoded;
 
+      console.log(decoded)
+
       // Authorize the user to see if s/he can access our resources
       validateUser(decoded.username, function(dbUser){ // The key would be the logged in user's username
-
+          
           if (dbUser) {
      
      

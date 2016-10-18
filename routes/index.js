@@ -21,48 +21,48 @@ module.exports = function(model){
 		router.post('/login', auth.login);
 
 		 //company
-		 router.get('/companies',company.getAll);
+		 router.get('/api/v1/api/v1/companies',company.getAll);
 
-		 router.post('/company',company.create);
+		 router.post('/api/v1/company',company.create);
 
-		 router.get('/company/:idCompany',company.getOne);
+		 router.get('/api/v1/company/:idCompany',company.getOne);
 
-		 router.put('/company/:idCompany',company.update);
+		 router.put('/api/v1/company/:idCompany',company.update);
 
-		 router.delete('/company/:idCompany',company.delete);
+		 router.delete('/api/v1/company/:idCompany',company.delete);
 
 
 	    //product
-	    router.get('/products',product.getAll);
+	    router.get('/api/v1/products',product.getAll);
 
-	    router.post('/company/product',product.create);
+	    router.post('/api/v1/company/product',product.create);
 
-	    router.get('/company/product/:idProduct',product.getOne);
+	    router.get('/api/v1/company/product/:idProduct',product.getOne);
 
-	    router.put('/company/product/:idProduct',product.update);
+	    router.put('/api/v1/company/product/:idProduct',product.update);
 
-	    router.delete('/company/product/:idProduct',product.delete);
+	    router.delete('/api/v1/company/product/:idProduct',product.delete);
 
 
 	    //user
 
-	    router.get('/user/',user.getAll);
+	    router.get('/api/v1/user/',user.getAll);
 
-	    router.post('/company/user',user.create);
+	    router.post('/api/v1/company/user',user.create);
 
-	    router.get('/company/user/:idUser',user.getOne);
+	    router.get('/api/v1/company/user/:idUser',user.getOne);
 
-	    router.put('/company/user/:idUser',user.update);
+	    router.put('/api/v1/company/user/:idUser',user.update);
 
-	    router.delete('/company/user/:idUser',user.delete);
+	    router.delete('/api/v1/company/user/:idUser',user.delete);
 
 
 		 //quotation
 
-		router.post('/company/user/:idUser/quotes',quotation.getAll);
-		router.post('/company/user/:idUser/quotation',quotation.create);
-		router.get('/company/user/:idUser/quotation/:idQuotation',quotation.getOne);
-	    router.delete('/company/user/:idUser/quotation/:idQuotation',quotation.delete);
+		router.get('/api/v1/quotations',quotation.getAll);
+		router.post('/api/v1/quotation',quotation.create);
+		router.get('/api/v1/quotation/:idQuotation',quotation.getOne);
+	    router.delete('/api/v1/quotation/:idQuotation',quotation.delete);
 	// </@@@CatalogueRouter>
 
 	return router;		

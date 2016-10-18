@@ -3,13 +3,15 @@ module.exports = function(model){
 
 var template = {
 
-    getAll: function(req, res) {
-        // input
-        var input = req.query;
-        model.Quotation.findAll({ where : { userId : input.userId } }).then(function(data){
-            res.send(data);
-        });
-    },
+  getAll: function(req, res) {
+    res.header("Access-Control-Allow-Origin", "*");
+    // input
+    var input = req.query;
+
+      model.Quotation.findAll().then(function(data){
+        res.send(data);
+      });
+  },
   getOne: function(req, res) {
     // input
     var input = req.query;

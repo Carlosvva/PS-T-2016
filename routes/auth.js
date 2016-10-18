@@ -9,10 +9,10 @@ var auth = {
 
     console.log(req.body);
  
-    var username = req.body.username || '';
+    var email = req.body.email || '';
     var password = req.body.password || '';
     
-    if (username == '' || password == '') {
+    if (email == '' || password == '') {
       res.status(httpStatus._401.status);
       res.json({
         "status": httpStatus._401.status,
@@ -22,14 +22,18 @@ var auth = {
     }
  
     // Fire a query to DB and check if the credentials are valid
-    auth.validate(username, password, res); 
+    auth.validate(email, password, res); 
   },
 
-  validate: function(username, password, res) {
-    var query = ("select * from user where email = ? and password = ?;");
-    var params = [username, password];
+  validate: function(email, password, res) {
+    var query = ("select * from users where email = ? and password = ?;");
+    var params = [email, password];
+    console.log(email)
+    console.log(password)
+    console.log("select * from users where email = "+email+" and password = "+password+";")
 
     db.execute(query, params, function(data){
+      console.log(data)
 
       if(data.length != 1){
         res.status(401);
@@ -43,7 +47,7 @@ var auth = {
         // and dispatch it to the client
         var dbUserObj = {
           id : data[0].id,
-          username : data[0].email,
+          email : data[0].email,
           profile : data[0].profile,
           role : "admin"
         }
@@ -56,9 +60,9 @@ var auth = {
 
   },
  
-  validateUser: function(username, callback) {
-    var query = ("SELECT * FROM user WHERE email = ?");
-    var params = [username];
+  validateUser: function(email, callback) {
+    var query = ("SELECT * FROM users WHERE email = ?");
+    var params = [email];
 
     db.execute(query, params, function(data){
       callback(data[0]);
@@ -76,7 +80,7 @@ function genToken(user) {
   var token = jwt.encode({
     exp: expires,
     user : user.id,
-    username : user.username,
+    username : user.email,
     profile : user.profile,
     role : user.role,
     partner : user.partner
