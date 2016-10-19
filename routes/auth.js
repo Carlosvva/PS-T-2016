@@ -48,8 +48,7 @@ var auth = {
         var dbUserObj = {
           id : data[0].id,
           email : data[0].email,
-          profile : data[0].profile,
-          role : "admin"
+          company : data[0].companyId
         }
 
         res.json(genToken(dbUserObj));
@@ -81,9 +80,7 @@ function genToken(user) {
     exp: expires,
     user : user.id,
     username : user.email,
-    profile : user.profile,
-    role : user.role,
-    partner : user.partner
+    company : user.company
   }, require('../config/secret')());
  
   return {

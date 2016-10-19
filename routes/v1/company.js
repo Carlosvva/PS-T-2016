@@ -15,7 +15,7 @@ var template = {
   getOne: function(req, res) {
     // input
     var input = req.query;
-      input.id = req.params.idCompany;
+      input.id = req.params.id;
       model.Company.findById(input.id).then(function(data){
         res.send(data);
       });
@@ -37,7 +37,7 @@ var template = {
     // input
     console.log('update');
     var input = req.body;
-    input.id = req.params.idCompany;
+    input.id = req.params.id;
 
       model.Company.update(input, { where: { id: input.id } }).then(function(data){
         res.send(data);
@@ -48,7 +48,7 @@ var template = {
 
     // input
     var input = req.body;
-    input.id = req.params.idCompany;
+    input.id = req.params.id;
 
       model.Company.destroy({ where: { id: input.id } }).then(function(data){
         res.send("deleted");

@@ -1,20 +1,20 @@
 module.exports = function(model){
 
-
 var template = {
 
   getAll: function(req, res) {
     // input
+    
     var input = req.query;
-      model.Product.findAll({ where : { companyId : input.companyId } }).then(function(data){
+      model.Product.findAll({ where : { companyId : req.session.company } }).then(function(data){
         res.send(data);
       });
   },
   getOne: function(req, res) {
     // input
     var input = req.query;
-      input.id = req.params.idProduct;
-      model.Product.findById(input.id).then(function(data){
+      input.id = req.params.id;
+      model.Product.findById({ where : { companyId : input.companyId } }).then(function(data){
         res.send(data);
       });
 
@@ -27,15 +27,13 @@ var template = {
       model.Product.create(input).then(function(data){
         res.send(data);
       });
-    
-    
   },
 
   update: function(req, res) {
     // input
     console.log('update');
     var input = req.body;
-    input.id = req.params.idProduct;
+    input.id = req.params.id;
 
       model.Product.update(input, { where: { id: input.id } }).then(function(data){
         res.send(data);
@@ -46,7 +44,7 @@ var template = {
 
     // input
     var input = req.body;
-    input.id = req.params.idProduct;
+    input.id = req.params.id;
 
       model.Product.destroy({ where: { id: input.id } }).then(function(data){
         res.send("deleted");

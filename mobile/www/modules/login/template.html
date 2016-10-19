@@ -1,18 +1,18 @@
 <ons-page>
-    <div class="login">
+    <div class="login" ng-controller="loginController">
         <div class="cover"></div>
         <div class="container"> 
         	<img src="https://www.pentcloud.com/es/img/logo.svg" class="logo"/>
 			<div>
 				<p>
 					<!-- <ons-icon icon="fa-cog" size="20px"></ons-icon> -->
-					<ons-input class="font-awesome" id="username" modifier="underbar" placeholder="&#xf0e0; Username" float ng-model="page.username"></ons-input>
+					<ons-input class="font-awesome" id="username" modifier="underbar" placeholder="&#xf0e0; Username" float ng-model="user.email"></ons-input>
 				</p>
 				<p>
-					<ons-input class="font-awesome" id="password" modifier="underbar" type="password" placeholder="&#xf023; Password" float ng-model="page.password"></ons-input>
+					<ons-input class="font-awesome" id="password" modifier="underbar" type="password" placeholder="&#xf023; Password" float ng-model="user.password"></ons-input>
 				</p>
 				<p class="login">
-					<ons-button ng-click="app.login()" class="loginButton">Login</ons-button>
+					<ons-button ng-click="login()" class="loginButton">Login</ons-button>
 				</p>
 			</div>
         </div>

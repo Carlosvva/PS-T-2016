@@ -47,10 +47,12 @@ module.exports = function(Sequelize){
 		description: Sequelize.STRING
 	});
 
-    // relacionado a company
+    // relacionado a Company
     model.User.belongsTo(model.Company);
     model.Product.belongsTo(model.Company);
-
+    model.Quotation.belongsTo(model.Company);
+    //relacionado a User
+    model.Quotation.belongsTo(model.User);
 	// Sync 
 	sequelize
 	  .sync({ force: false })
@@ -61,5 +63,4 @@ module.exports = function(Sequelize){
 	  });
 
 	return model;
-
 }

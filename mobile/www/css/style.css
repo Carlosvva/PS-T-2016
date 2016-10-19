@@ -170,7 +170,6 @@
     margin-top: -20px;
     margin-bottom: 30px;
 }
-<<<<<<< HEAD
 ons-dialog:not([modifier='material']) p {
   margin-left: 10px;
   margin-right: 10px;
@@ -179,10 +178,6 @@ ons-dialog:not([modifier='material']) p {
 input {
   width: 100%;
 }
-=======
-
-
->>>>>>> refs/remotes/origin/master
 .inputAddSeller{
     margin-top: 30px;
     margin-bottom: 30px;
@@ -200,4 +195,32 @@ input {
 .inputAddSeller label input:active{
     color: #000000;
     background-image: linear-gradient(to top, transparent 1px, skyblue 1px);
+}
+.dialogo {
+    background: url(../img/bg3.jpg)center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.dialogo .cover{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+}
+.dialogo .container{
+    position: relative;
+    z-index: 99;
+    width: 50%;
+    left: 25%;
+    height: 50%;
+    top: 25%;
+}
+.margin{
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+.margin2{
+    margin-bottom: 40px;
 }
