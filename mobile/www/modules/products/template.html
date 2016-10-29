@@ -1,4 +1,4 @@
-<ons-page ng-controller="productsController">
+<ons-page>
     <div class="soporte fondo2">
     <ons-toolbar>
         <div class="left" ng-click="menu.toggleMenu()">
@@ -14,50 +14,9 @@
         <div class="container"> 
             <div class="contenido">
                 <ons-list-item ng-click="show()" modifier="tappable">
-                    Login form 
+                    Login form {{::algo}}
                 </ons-list-item>
-                {{products}}
-                <button ng-click="getCompanies()">Companies</button>
-                <div>
-                    <table align="left">
-                        <thead>
-                        <th>
-                           <td>No.</td>
-                           <td>Name</td>
-                           <td>Address</td>
-                           <td>Created</td>
-                        </th>
-                        </thead>
-                        <tbody>
-                        <tr ng-repeat="company in companies">
-                            <td>{{$index + 1}}</td>
-                            <td>{{company.companyName}}</td>
-                            <td>{{company.address}}</td>
-                            <td>{{company.createdAt}}</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                    {{company.companyName}}
-                    <table align="right">
-                        <thead>
-                        <th>
-                           <td>No.</td>
-                           <td>Name</td>
-                           <td>Address</td>
-                           <td>Created</td>
-                        </th>
-                        </thead>
-                        <tbody>
-                        <tr ng-repeat="company in companies">
-                            <td>{{$index + 1}}</td>
-                            <td>{{company.companyName}}</td>
-                            <td>{{company.address}}</td>
-                            <td>{{company.createdAt}}</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                    {{company.companyName}}
-                </div>
+                <button ng-click="getUsers()">test</button>
             </div>
         </div>
         <ons-fab position="bottom right" ng-click="app.goToPage('products/add')">

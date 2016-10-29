@@ -3,24 +3,13 @@ module.exports = function(model){
 
 var template = {
 
-  getAll: function(req, res) {
+  getAll: function(type, req, res) {
     res.header("Access-Control-Allow-Origin", "*");
     // input
     var input = req.query;
-      model.User.findAll({ where : { companyId : input.companyId } }).then(function(data){
+      model.User.findAll({ where : { companyId : req.session.company, type : type } }).then(function(data){
         res.send(data);
       });
-  },
-  getFromCompany : function(req, res){
-    res.header("Access-Control-Allow-Origin", "*");
-    // input
-    var input = req.query || {};
-
-    input.companyId = req.params.id;
-
-    model.User.findAll({ where : { companyId : input.companyId } }).then(function(data){
-      res.send(data);
-    }) 
   },
   getOne: function(req, res) {
     // input
@@ -30,17 +19,22 @@ var template = {
         res.send(data);
       });
   },
-  create: function(req, res) {
+  create: function(type, req, res) {
     // input
     var input = req.body;
+    input.type = type;
+    input.companyId = req.params.id;
       
       model.User.create(input).then(function(data){
         res.send(data);
       });    
   },
-  update: function(req, res) {
+  update: function(req, res, privileges) {
     // input
     var input = req.body;
+    if(!privileges){
+      delete input.type;
+    }
     input.id = req.params.id;
 
       model.User.update(input, { where: { id: input.id } }).then(function(data){

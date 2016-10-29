@@ -32,7 +32,7 @@ module.exports = function(Sequelize){
 		lastName: Sequelize.STRING,
 		email: Sequelize.STRING,
 		password: Sequelize.STRING,
-		type: Sequelize.STRING
+		type: Sequelize.INTEGER
 	});
 
 	model.Company = sequelize.define('company', {
@@ -50,7 +50,6 @@ module.exports = function(Sequelize){
     // relacionado a Company
     model.User.belongsTo(model.Company);
     model.Product.belongsTo(model.Company);
-    model.Quotation.belongsTo(model.Company);
     //relacionado a User
     model.Quotation.belongsTo(model.User);
 	// Sync 

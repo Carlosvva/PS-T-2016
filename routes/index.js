@@ -22,15 +22,15 @@ module.exports = function(model){
 
 		 //company
 		 
-		 router.get('/api/v1/companies',company.getAll);
+		router.get('/api/v1/companies',company.getAll);
 
-		 router.post('/api/v1/company',company.create);
+		router.post('/api/v1/company',company.create);
 
-		 router.get('/api/v1/company/:id',company.getOne);
+		router.get('/api/v1/company/:id',company.getOne);
 
-		 router.put('/api/v1/company/:id',company.update);
+		router.put('/api/v1/company/:id',company.update);
 
-		 router.delete('/api/v1/company/:id',company.delete);
+		router.delete('/api/v1/company/:id',company.delete);
 
 	    //product
 
@@ -44,25 +44,41 @@ module.exports = function(model){
 
 	    router.delete('/api/v1/company/:id/product/:id',product.delete);
 
-	    //user
+	    //salesman
 
-	    router.get('/api/v1/company/:id/user/',user.getFromCompany);
+	    router.get('/api/v1/salesman', function(req, res){ user.getAll(1, req, res); });
 
-	    router.post('/api/v1/company/:id/user',user.create);
+	    router.post('/api/v1/company/:id/salesman', function(req, res){ user.create(1, req, res); });
 
-	    router.get('/api/v1/company/:id/user/:id',user.getOne);
+	    router.get('/api/v1/company/:id/salesman/:id',user.getOne);
 
-	    router.put('/api/v1/company/:id/user/:id',user.update);
+	    router.put('/api/v1/company/:id/salesman/:id',user.update);
 
-	    router.delete('/api/v1/company/:id/user/:id',user.delete);
+	    router.delete('/api/v1/company/:id/salesman/:id',user.delete);
 
-		 //quotation
+	    //admin
 
-		router.get('/api/v1/company/:id/user/:id/quotations',quotation.getAll);
-		router.get('/api/v1/company/:id/company/:id/quotations',quotation.getAll);
-		router.post('/api/v1/company/:id/quotation',quotation.create);
-		router.get('/api/v1/company/:id/quotation/:id',quotation.getOne);
-	    router.delete('/api/v1/company/:id/quotation/:id',quotation.delete);
+	    router.get('/api/v1/admin', function(req, res){ user.getAll(0, req, res); });
+
+	    router.post('/api/v1/company/:id/admin', function(req, res){ user.create(0, req, res); });
+
+	    router.get('/api/v1/company/:id/admin/:id',user.getOne);
+
+	    router.put('/api/v1/company/:id/admin/:id',user.update);
+
+	    router.delete('/api/v1/company/:id/admin/:id',user.delete);
+
+	    //Privileges
+
+	    router.put('/api/v1/company/:id/admin/:id/privileges', function(req, res){ var input = { body : { type : 0 }, params : req.params }; user.update(input, res, true); });
+	    router.delete('/api/v1/company/:id/admin/:id/privileges', function(req, res){ var input = { body : { type : 1 }, params : req.params }; user.update(input, res, true); });
+
+
+		//quotations
+		router.get('/api/v1/company/:id/salesman/:id/quotations',quotation.getAll);
+		router.post('/api/v1/company/:id/salesman/:id/quotations',quotation.create);
+		router.get('/api/v1/company/:id/salesman/:id/quotations',quotation.getOne);
+	    router.delete('/api/v1/company/:id/salesman/:id/quotations',quotation.delete);
 	// </@@@CatalogueRouter>
 	return router;		
 };
